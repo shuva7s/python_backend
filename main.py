@@ -11,6 +11,7 @@ from sklearn.linear_model import LinearRegression
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.middleware import SlowAPIMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 
 # ✅ Load environment variables
 load_dotenv()
@@ -48,6 +49,14 @@ async def lifespan(app: FastAPI):
 
 # ✅ Initialize FastAPI with `lifespan`
 app = FastAPI(lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow requests from all domains
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
 
 # ✅ Add Rate Limiter (3 requests per minute per IP)
 limiter = Limiter(key_func=get_remote_address)
