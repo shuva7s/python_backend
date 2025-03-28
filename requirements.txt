@@ -1,12 +1,8 @@
 fastapi==0.115.12
-uvicorn  # For running FastAPI
-asyncpg  # Recommended for async PostgreSQL (Neon)
-pydantic  # Data validation
-sqlalchemy  # ORM (if needed)
-numpy  # For numerical operations
-pandas  # For data handling
-scikit-learn  # For classification
-scipy  # For scientific computing
-seaborn  # For data visualization
-requests  # For making HTTP requests
+uvicorn
+asyncpg
+sqlalchemy
+numpy
+scikit-learn
 python-dotenv
+slowapi
