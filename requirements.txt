@@ -9,3 +9,4 @@ scikit-learn  # For classification
 scipy  # For scientific computing
 seaborn  # For data visualization
 requests  # For making HTTP requests
+python-dotenv
