@@ -1,8 +1,6 @@
 fastapi==0.115.12
 uvicorn
-asyncpg
-sqlalchemy
 numpy
 scikit-learn
-python-dotenv
 slowapi
+pandas
